@@ -1,0 +1,31 @@
+<div class="selec">
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Pollutant</mat-label>
+      <select
+        matNativeControl
+        required
+        id="contaminante"
+        required
+        [(ngModel)]="select"
+        name="contaminante"
+        (ngModelChange)="onSubmit()"
+        #contam="ngModel"
+      >
+        <option
+          *ngFor="let contaminante of contaminantes"
+          [value]="contaminante"
+          >{{contaminante}}
+        </option>
+      </select>
+    </mat-form-field>
+  </form>
+
+  <div id="miGrafico">
+    <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      style="width: 100%; height: 400px; display: block;"
+    ></highcharts-chart>
+  </div>
+</div>

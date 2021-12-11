@@ -1,0 +1,48 @@
+<h3 style="text-align: center;">
+  Data on measuring devices of our own design
+</h3>
+<h5 style="text-align: center;">
+  Located in each of the project countries
+</h5>
+<div id="general">
+  <div id="grafica">
+    <figure class="highcharts-figure">
+      <div id="externos"></div>
+    </figure>
+  </div>
+  <div>
+    <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <select matNativeControl required formControlName="estacion">
+          <option value="Spain">Spain</option>
+          <option value="Greece">Greece</option>
+          <option value="Bulgaria">Bulgaria</option>
+        </select>
+      </mat-form-field>
+      <br />
+      <div id="fechas">
+        <p>Date range</p>
+        <input
+          type="date"
+          min="2015-01-01"
+          formControlName="fechaInicial"
+          id="fechai"
+          required
+        /><br />
+        <label for="fechai"></label>
+        <input
+          type="date"
+          min="2015-01-01"
+          formControlName="fechaFinal"
+          id="fechaf"
+          required
+        /><br />
+        <label for="fechaf"></label>
+      </div>
+      <br />
+      <!-- <button type="submit" class="btn-send">Enviar</button> -->
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

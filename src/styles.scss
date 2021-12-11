@@ -1,0 +1,64 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@mixin material2-docs-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  .active-link {
+    background-color: mat-color($background, status-bar) !important;
+    color: mat-color($primary) !important;
+  }
+  .mat-subheader {
+    color: mat-color($accent) !important;
+  }
+}
+
+$app-primary: mat-palette($mat-teal);
+$app-accent: mat-palette($mat-red);
+$app-warn: mat-palette($mat-orange);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+@include angular-material-theme($app-theme);
+@include material2-docs-theme($app-theme);
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.app-content {
+  padding: 10px;
+}
+
+.button-uppercase {
+  .mat-button,
+  .mat-raised-button,
+  .mat-simple-snackbar-action {
+    text-transform: uppercase;
+  }
+}
+.example-sidenav {
+  width: 280px;
+}
+.isToggled.toggle-component-icon {
+  transition-duration: 0.25s;
+  transform: rotate(180deg);
+}
+.isUnToggled.toggle-component-icon {
+  transform: rotate(0deg);
+  transition-duration: 0.25s;
+}
+.component-examples-sect {
+  z-index: 1;
+}
+pre {
+  white-space: pre-wrap;
+  background: rgba(0, 0, 0, 0.01);
+  border: 0.5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  display: block;
+  margin: 16px auto;
+  overflow-x: auto;
+  padding: 20px;
+}

@@ -1,0 +1,33 @@
+table,
+td,
+tr {
+  text-align: center;
+}
+
+.thu {
+  border: 10px solid rgb(200, 200, 200);
+  background-color: rgb(200, 200, 200);
+  border-radius: 10px;
+
+}
+
+table {
+  height: 45%;
+  width: 100%;
+}
+
+td {
+  padding-left: 1%;
+  padding: 0.25%;
+  width: 50%;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a {
+  color: rgb(40, 175, 112);
+}
+p {
+  text-indent: 2em
+}

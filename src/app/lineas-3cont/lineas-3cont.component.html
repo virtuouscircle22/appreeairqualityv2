@@ -1,0 +1,44 @@
+<div class="selec">
+  <h3 style="text-align: center;">Comparison of PM10, NO and NH3</h3>
+  <div id="general">
+    <div id="grafica">
+      <figure class="highcharts-figure">
+        <div id="externos"></div>
+      </figure>
+    </div>
+    <div id="form">
+      <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+        <mat-form-field appearance="fill">
+          <mat-label>Station</mat-label>
+          <select matNativeControl required formControlName="estacion">
+            <option value="8495">Bermejales, Spain</option>
+            <option value="8084">Druzhba, Bulgaria</option>
+            <option value="12410">Patra-2, Greece</option>
+          </select>
+        </mat-form-field>
+        <br />
+
+        <p>Date range</p>
+        <input
+          type="date"
+          min="2015-01-01"
+          formControlName="fechaInicial"
+          id="fechai"
+          required
+        /><br />
+        <label for="fechai"></label>
+        <input
+          type="date"
+          min="2015-01-01"
+          formControlName="fechaFinal"
+          id="fechaf"
+          required
+        /><br />
+        <label for="fechaf"></label>
+        <br />
+        <!-- <button type="submit" class="btn-send">Enviar</button> -->
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

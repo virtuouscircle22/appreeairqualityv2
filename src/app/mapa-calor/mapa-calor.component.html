@@ -1,0 +1,65 @@
+<div class="col-sm-6 mx-auto">
+  <div class="selec">
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <select
+          matNativeControl
+          required
+          id="pais"
+          required
+          [(ngModel)]="select1"
+          name="pais"
+          (ngModelChange)="onSubmit()"
+          #pais="ngModel"
+        >
+          <option *ngFor="let elemento of paisesOpcion" [value]="elemento.pais"
+            >{{elemento.estacion}}
+          </option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Year</mat-label>
+        <select
+          matNativeControl
+          required
+          id="anyos"
+          required
+          [(ngModel)]="select2"
+          name="anyos"
+          (ngModelChange)="onSubmit()"
+          #anyo="ngModel"
+        >
+          <option *ngFor="let anyo of anyos" [value]="anyo"
+            >{{anyo| uppercase}}
+          </option>
+        </select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Month</mat-label>
+        <select
+          matNativeControl
+          required
+          id="mes"
+          required
+          [(ngModel)]="select3"
+          name="mes"
+          (ngModelChange)="onSubmit()"
+          #mes="ngModel"
+        >
+          <option *ngFor="let mes of meses" [value]="mes"
+            >{{mes| uppercase}}
+          </option>
+        </select>
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+<div id="MapaCalor">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    style="width: 200%; height: 400px; display: block;"
+  ></highcharts-chart>
+</div>

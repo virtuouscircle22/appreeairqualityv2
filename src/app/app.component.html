@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>REE and Air Quality</title>
+  </head>
+
+  <body>
+    <div>
+      <mat-toolbar color="primary">
+        <div fxShow="true" fxHide.gt-sm="true">
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <a mat-button class="companyName" routerLink="/">
+          <span>REE and Air Quality</span>
+        </a>
+        <span class="example-spacer"></span>
+        <div fxShow="true" fxHide.lt-md="true">
+          <a mat-button routerLink="/">Current Data</a>
+          <a mat-button routerLink="/Monthly">Monthly Data</a>
+          <a mat-button routerLink="/Annual">Annual Data</a>
+          <a mat-button routerLink="/Comparision">Pollutant comparison</a>
+          <a mat-button routerLink="/Evolution">PM10 evolution</a>
+          <a mat-button routerLink="/Information">Information</a>
+        </div>
+      </mat-toolbar>
+      <mat-sidenav-container fxFlexFill class="example-container">
+        <router-outlet></router-outlet>
+
+        <mat-sidenav
+          color="primary"
+          #sidenav
+          fxLayout="column"
+          mode="over"
+          opened="false"
+          fxHide.gt-sm="true"
+        >
+          <div fxLayout="column">
+            <a mat-button routerLink="/">Current Data</a>
+            <a mat-button routerLink="/Monthly">Monthly Data</a>
+            <a mat-button routerLink="/Annual">Annual Data</a>
+            <a mat-button routerLink="/Comparision">Pollutant comparison</a>
+            <a mat-button routerLink="/Evolution">PM10 evolution</a>
+            <a mat-button routerLink="/Information">Information</a>
+          </div>
+        </mat-sidenav>
+      </mat-sidenav-container>
+    </div>
+  </body>
+</html>

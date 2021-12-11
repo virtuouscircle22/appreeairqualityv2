@@ -1,0 +1,21 @@
+#grafica {
+  float: left;
+  width: 70%;
+}
+#form {
+  float: right;
+  width: 25%;
+  align-items: center;
+}
+
+form {
+  float: center;
+}
+
+button {
+  float: center;
+}
+
+p {
+  float: center;
+}
